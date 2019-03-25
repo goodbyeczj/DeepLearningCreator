@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>外科整形手术复发预测</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/show.css">
+    <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/part/head.css">
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/semantic/dist/semantic.min.js"></script>
+</head>
+<body>
+<div class="ui left aligned grid head_shadow">
+    <div class="three wide column vertical_block"><a href="/rkb.html" class="vertical_block"><img src="/imgs/rkb.jpg" class="vertical_block"></a></div>
+    <div class="tow wide column vertical_block"><a href="/rkb.html" class="font">首页</a></div>
+    <div class="tow wide column vertical_block"><a class="font" href="/product.html">产品</a></div>
+    <div class="tow wide column vertical_block"><a class="font">联系</a></div>
+    <div class="eight wide column vertical_block"></div>
+    <div class="two wide column vertical_block"></div>
+</div>
+<div class="container sh_top">
+    <div>
+        <h3>背景:</h3>
+        <div class="ui segment">
+外科整形手术的基本思想是通过手术的方式，将头部各重点骨骼坐标点之间连接线的 角度、线距归于一个合适的值域之内，以达到美化外形的作用。本任务意在实现一个基于深度学 习网络的外科整容手术复发预测系统，通过结合关键特征点在手术前后坐标、点线距、点线角度， 甚至病人个体特征，构建一套完整的深度学习网络，输出各指标在半年后可能出现的移位情况， 以预测整容手术后复发概率。        </div>
+        <div class="ui equal width grid">
+            <div class="column"><img src="/imgs/introduction/zx_tz.png" class="ui image">
+                <p>9.1 整形手术特征与背景</p>
+            </div>
+            <div class="column"><img src="/imgs/introduction/zx_fx.png" class="ui image">
+                <p>图 9.2 医疗整形外科手术术前分析</p>
+            </div>
+            <div class="column"><img src="/imgs/introduction/zx_lstm.png" class="ui image">
+                <p>图 9.3Topic Bi-LSTM+Attention 模型框架</p>
+            </div>
+        </div>
+    </div>
+    <div class="ui divider hidden"></div>
+    <div>
+        <h3>实现:</h3>
+        <div class="ui segment">
+有别于传统机器学习，本任务采用深度学习技术，通过构建深度学习网络解决该需求。 将病人骨骼点及病人个体特征转换为向量表示，拼接术前及术后即刻数据情况，作为输入以预测 术后半年各节点数据情况。神经网络部分欲使用主题双向 LSTM 模型，融合基于影响复发诸多因 素的 Attention 机制，综合训练输出各指标半年后情况，以判断是否复发。为减少训练损失，减少 训练用时以及训练样本需求量，我们使用人工经验值作为初始 attention 权值，以稍稍减少数据需 求量，提升预测效果。
+        </div>
+    </div>
+    <div>
+        <h3>训练和测试算法:</h3>
+        <div class="ui segment">训练和测试算法：将输入数据以分成 80%的训练集和 20%的测试集，使用随机森林回归作为 算法模型，在测试集测试集上计算得到的结果是否达到了项目需求。
+在建模中，使用了 100 颗最大深度是 10 的决策树、最小叶子节点为 5、最小分割节点为 7， 得到随机森林模型。训练集和测试集的预测结果如图所示，图中红色线为实际数据，绿色点为 预测数据。使用均方误差平方根 RMSE 和绝对值误差 MAE 作为模型预测的判别依据。在测试集 上，RMSE=3.81，MAE=2.73，远超现有技术的精度，如图 1.3 所示。
+        </div>
+    </div>
+    <div>
+        <h3>结果:</h3>
+        <div class="ui segment">该模型的部分代码和测试结果如下：</div>
+        <img src="/imgs/introduction/wl_result.png">
+    </div>
+</div>
+</body>
+</html>

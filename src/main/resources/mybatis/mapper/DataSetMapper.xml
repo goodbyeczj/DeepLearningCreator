@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rkb.dao.DataSetDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <insert id="addData" parameterType="com.rkb.pojo.DataSet" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO t_dataset (name,userId,path)
+              VALUES (#{name },#{userId},#{path})
+    </insert>
+    <select id="findDataSetByUserId" parameterType="DataSet" resultType="DataSet">
+        select *
+        from t_dataset
+        where userId = #{userId}
+    </select>
+    <select id="findDataSetByUserIdAndName" parameterType="DataSet" resultType="DataSet">
+        select *
+        from t_dataset
+        where userId = #{userId} and name = #{name }
+    </select>
+    <delete id="deleteData" parameterType="DataSet">
+        delete from t_dataset
+        where id = #{id}
+    </delete>
+    <select id="findAllModelDataById" parameterType="Long" resultType="ModelData">
+        select *
+        from t_model_data
+        where id = #{id}
+    </select>
+    <insert id="addModelData" parameterType="ModelData">
+        INSERT INTO t_model_data (modelId,name,path)
+              VALUES (#{modelId },#{name},#{path})
+    </insert>
+</mapper>

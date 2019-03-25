@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实时目标检测器</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/show.css">
+    <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/part/head.css">
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/semantic/dist/semantic.min.js"></script>
+</head>
+<body>
+<div class="ui left aligned grid head_shadow">
+    <div class="three wide column vertical_block"><a href="/rkb.html" class="vertical_block"><img src="/imgs/rkb.jpg" class="vertical_block"></a></div>
+    <div class="tow wide column vertical_block"><a href="/rkb.html" class="font">首页</a></div>
+    <div class="tow wide column vertical_block"><a class="font" href="/product.html">产品</a></div>
+    <div class="tow wide column vertical_block"><a class="font">联系</a></div>
+    <div class="eight wide column vertical_block"></div>
+    <div class="two wide column vertical_block"></div>
+</div>
+<div class="container sh_top">
+    <div>
+        <h3>背景:</h3>
+        <div class="ui segment">
+睿客实时目标检测器是针对特定领域的实时目标检测任务(ImageTracker ImageTracker)，主要目的是在一段视频影像中识别出备选集中存在的某个目标，是经典的计算机视觉任务。该项目落地形式为在用户翻阅画册过程中,识别出画册所属页数。        </div>
+        <div class="ui equal width grid">
+            <div class="column"><img src="/imgs/introduction/mbjc_img.png" class="ui image">
+                <p>图 8.1 ImageTracker 效果图 </p>
+            </div>
+            <div class="column"><img src="/imgs/introduction/mbjc_sz.png" class="ui image">
+                <p>图 1.2 无线电磁波频率场强预测数据</p>
+            </div>
+        </div>
+    </div>
+    <div class="ui divider hidden"></div>
+    <div>
+        <h3>数据:</h3>
+        <div class="ui segment">
+            输入数据：输入为实时的视频数据，ImageTracker 的实现是基于经典 SIFT 算子图像特征点发现算法的改良形式 SURF 算法，通过Opencv 和 python 多线程操作，实现了调多线程操作，实现了调用摄像头同步展示视频流与目标检测任务。
+用摄像头同步展示视频流与目标检测任务。SURF 是一种兴趣点检测及描述子算法。可以说是对 SIFT 算法的加强版，是用来实现尺度不变性特征点的检测与匹配任务的。SURF 算法首先利用 Hessian 矩阵确定候选点，然后进行 NMS(非极大值抑制)初步确定特征点，再通过确定特征点主方向，综合构造 SURF 特征点描述算法从而进行图像特征抽取。
+输出数据：用户翻阅画册过程中,识别出画册所属页数。
+
+        </div>
+    </div>
+    <div>
+        <h3>结果:</h3>
+        <div class="ui segment">最终我们的探测器取得了较好的效果,已布置上线。效果图展示和应用展示如图 8.1和图8.2所示。</div>
+    </div>
+</div>
+</body>
+</html>

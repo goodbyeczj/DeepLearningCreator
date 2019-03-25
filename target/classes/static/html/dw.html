@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>车辆地物目标定位系统</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/show.css">
+    <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/part/head.css">
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/semantic/dist/semantic.min.js"></script>
+</head>
+<body>
+<div class="ui left aligned grid head_shadow">
+    <div class="three wide column vertical_block"><a href="/rkb.html" class="vertical_block"><img src="/imgs/rkb.jpg" class="vertical_block"></a></div>
+    <div class="tow wide column vertical_block"><a href="/rkb.html" class="font">首页</a></div>
+    <div class="tow wide column vertical_block"><a class="font" href="/product.html">产品</a></div>
+    <div class="tow wide column vertical_block"><a class="font">联系</a></div>
+    <div class="eight wide column vertical_block"></div>
+    <div class="two wide column vertical_block"></div>
+</div>
+<div class="container sh_top">
+    <div>
+        <h3>背景:</h3>
+        <div class="ui segment">
+物体检测(Object Detection)是在计算机视觉（computer vision）方向中识别图片的主体位置与类别的技术，不仅涉及到物体的识别,也涉及到位置的确定。该技术广泛运用于智能交通定位、军用武器定位等场景。目前对图像定位的研究在效果与速度上不断进行优化，我们使用目前前沿的图像定位技术，迁移到其他任意目标物体的识别中，取得了良好的效果
+        </div>
+        <div class="ui equal width grid">
+            <div class="column"><img src="/imgs/introduction/dw_train.png" class="ui image">
+                <p>图 6.1训练数据:待定位图片和相应位置</p>
+            </div>
+            <div class="column"><img src="/imgs/introduction/dw_sb.png" class="ui image">
+                <p>图6.2 桥墩识别效果</p>
+            </div>
+        </div>
+    </div>
+    <div class="ui divider hidden"></div>
+        <h3>结果:</h3>
+        <div class="ui segment">在此基础上，使用 GPU 加速,迭代 100000 次后，达到了良好的效果。在识别速度上，基于GPU 识别速度可以达到毫秒级别。效果展示如图6.2 所示。</div>
+    </div>
+</div>
+</body>
+</html>

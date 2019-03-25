@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高速机动车流量预测</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/show.css">
+    <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/part/head.css">
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/semantic/dist/semantic.min.js"></script>
+</head>
+<body>
+<div class="ui left aligned grid head_shadow">
+    <div class="three wide column font"><a href="/rkb.html"><img src="/imgs/rkb.jpg"></a></div>
+    <div class="tow wide column vertical_block"><a href="/rkb.html" class="font">首页</a></div>
+    <div class="tow wide column vertical_block"><a class="font" href="/product.html">产品</a></div>
+    <div class="tow wide column vertical_block"><a class="font">联系</a></div>
+    <div class="eight wide column vertical_block"></div>
+    <div class="two wide column vertical_block"></div>
+</div>
+<div class="container sh_top">
+    <div class="ui segment">
+        <h3>背景:</h3>
+        <div class="ui segment">
+河北省高速流量的预测，意在基于历史车流量数据，构建预测模型或算法，实现未来某天 或某周期的高速路网流量预测或预估，对流量走势研判提供参考。支持多路段、多时间颗粒度、 多因素、多级别的流量预测；支持按 ETC、MTC、客货车等细分维度进行流量预测。        </div>
+        <div class="ui equal width grid">
+            <div class="column"><img src="/imgs/introduction/cll_jl.png" class="ui image">
+                <p>图 7.1 河北高速车辆分小时统计结果</p>
+            </div>
+            <div class="column"><img src="/imgs/introduction/cll_zx.png" class="ui image">
+                <p>图 7.2 一阶差分后 PAC 和 AC 与置信区间关系</p>
+            </div>
+            <div class="column"><img src="/imgs/introduction/cll_arima.png" class="ui image">
+                <p>图 7.3 经典时间序列 ARIMA 拟合结果</p>
+            </div>
+            <div class="column"><img src="/imgs/introduction/cll_facebook.png" class="ui image">
+                <p>图 7.4 Facebook 最新模型拟合与预测结果</p>
+            </div>
+            <div class="column"><img src="/imgs/introduction/cll_rnn.png" class="ui image">
+                <p>图 7.5 使用深度网络 RNN 拟合结果</p>
+            </div>
+        </div>
+    </div>
+    <div class="ui divider hidden"></div>
+    <div class="ui segment">
+        <h3>数据:</h3>
+        <div class="ui segment">
+            获取数据为河北高速一段时间的流量记录。
+        </div>
+    </div>
+    <div class="ui segment">
+        <h3>训练和测试算法:</h3>
+        <div class="ui segment">
+         采用方法：ARIMA、可加性时序模型、循环神经网络 RNN-LSTM。
+在传统 ARIMA 模型方面，我们在通过数据处理之后，获取时间序列数据格式。通过趋势平 稳性验证，进行差分，绘制数据（MTC 零点数据）偏相关图与自相关图后定阶。处理情况如图：
+        </div>
+    </div>
+    <div class="ui segment">
+        <h3>结果:</h3>
+        <div class="ui segment">同时，我们使用了某深度学习模型完成时序分析，拟合结果较好</div>
+        <img src="/imgs/introduction/wl_result.png">
+    </div>
+</div>
+</body>
+</html>

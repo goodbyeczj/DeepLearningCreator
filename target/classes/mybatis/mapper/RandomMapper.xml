@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rkb.dao.RandomDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <insert id="addCore" parameterType="String">
+        INSERT INTO t_random (core)
+              VALUES (#{0})
+    </insert>
+    <select id="findCore" parameterType="String" resultType="Integer">
+        select id
+        from t_random
+        where core = #{core}
+    </select>
+    <delete id="deleteCore" parameterType="Integer">
+        delete from t_random
+        where id = #{id}
+    </delete>
+</mapper>

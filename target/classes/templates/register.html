@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/css/submit.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/part/head.css">
+
+</head>
+<body>
+<div class="ui left aligned grid head_shadow">
+    <div class="three wide column vertical_block"><a href="/rkb.html" class="vertical_block"><img src="/imgs/rkb.jpg" class="vertical_block"></a></div>
+    <div class="tow wide column vertical_block"><a href="/rkb.html" class="font">首页</a></div>
+    <div class="tow wide column vertical_block"><a class="font" href="/product.html">产品</a></div>
+    <div class="tow wide column vertical_block"><a class="font">联系</a></div>
+    <div class="eight wide column vertical_block"></div>
+    <div class="two wide column vertical_block"></div>
+</div>
+<div class="parent">
+    <center><h3>机器学习与深度学习科研教学一体化平台</h3></center>
+    <div class="ui s_top center">
+        <form class="ui large form width" action="/user/register.do" method="post">
+            <div class="field grid">
+                <div class="ui pointing below red basic label">
+                    ${msg}
+                </div>
+                <div class="ui left icon input">
+                    <i class="user icon"></i><input name="name" placeholder="UserName" type="text" />
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="lock icon"></i><input name="password" placeholder="Password" type="password" />
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="lock icon"></i><input name="re_password" placeholder="Repeat Password" type="password" />
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="key icon"></i><input name="core" placeholder="邀请码" type="text" />
+                </div>
+            </div>
+            <div class="ui fluid large primary submit button">
+                Register
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="/js/jquery.js" charset="utf-8"></script>
+<script type="text/javascript" src="/semantic/dist/semantic.min.js"></script>
+<script type="text/javascript" src="/js/submit.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+.padding{
+    padding: 0 20px;
+}
+.vertical_block{
+    margin: auto 0;
+}
+.font{
+    color: #4D555D;
+    font-weight: bolder;
+    font-size: 16px;
+}
+.font:hover{
+    color: #0099CC;
+}

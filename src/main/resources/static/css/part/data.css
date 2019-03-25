@@ -1,0 +1,34 @@
+.width_1000{
+    width: 1000px;
+    height: 50%;
+}
+.center{
+    width: 800px;
+    display: block;
+    margin: 0 auto;
+}
+.center400{
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+}
+.top_20{
+    margin-top: 20px;
+}
+.h{
+    height: 100%;
+    background: red;
+}
+.fileinput-button {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+.fileinput-button input{
+    position:absolute;
+    right: 0px;
+    top: 0px;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 400px;
+}

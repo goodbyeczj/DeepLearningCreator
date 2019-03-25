@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rkb.dao.ModelCoreDao">
+    <select id="findCoreById" parameterType="Long" resultType="String">
+        select nodeCore
+        from t_modelcore
+        where modelID = #{id}
+    </select>
+    <insert id="saveCore" parameterType="ModelCore" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO t_modelcore (userId,nodeCore,modelId)
+              VALUES (#{userId},#{nodeCore},#{modelId})
+    </insert>
+    <delete id="deleteCore" parameterType="Long">
+        delete from t_modelcore
+        where modelId = #{modelId}
+    </delete>
+    <select id="findAllModelCoreByUserId" parameterType="Long" resultType="ModelAndCore">
+        select m.id,name,describe_
+        from t_modelcore as c ,t_model as m
+        where c.modelId = m.id and m.userId = #{userId}
+    </select>
+    <update id="updateCore" parameterType="ModelCore">
+        update t_modelcore
+        set userId = #{userId },
+            nodeCore =  #{nodeCore }
+        where modelId = #{modelId}
+    </update>
+</mapper>

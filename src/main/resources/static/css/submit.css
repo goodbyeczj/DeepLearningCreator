@@ -1,0 +1,14 @@
+.width{
+    width: 500px;
+}
+.center{
+    width: 500px;
+    display: block;
+    margin: 0 auto;
+}
+.r_floated{
+    float: right;
+}
+.r_text{
+    text-align: right   ;
+}

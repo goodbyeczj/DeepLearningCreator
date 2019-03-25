@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>雷达维修智能问答推送</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/show.css">
+    <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/part/head.css">
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/semantic/dist/semantic.min.js"></script>
+</head>
+<body>
+<div class="ui left aligned grid head_shadow">
+    <div class="three wide column vertical_block"><a href="/rkb.html" class="vertical_block"><img src="/imgs/rkb.jpg" class="vertical_block"></a></div>
+    <div class="tow wide column vertical_block"><a href="/rkb.html" class="font">首页</a></div>
+    <div class="tow wide column vertical_block"><a class="font" href="/product.html">产品</a></div>
+    <div class="tow wide column vertical_block"><a class="font">联系</a></div>
+    <div class="eight wide column vertical_block"></div>
+    <div class="two wide column vertical_block"></div>
+</div>
+<div class="container sh_top">
+    <div>
+        <h3>背景:</h3>
+        <div class="ui segment">
+气象观测和预报中，雷达是非常重要的设备；当前，在全国共部署了200部气象雷达，由于设备的昂贵和重要，人们对于雷达的警报或故障极度重视。该项目使用积累的雷达历史维修记录，使用机器学习模型学习一个智能的问答系统，要求可以在新问题出现时，该系统可以智能回答出可以使用何种维修方案。
+        </div>
+        <div class="ui equal width grid">
+            <div class="column"><img src="/imgs/introduction/jl.png" class="ui image">
+                <p>图 5.1雷达设备的维修记录（雷达信息-问题描述-问题解决方案） </p>
+            </div>
+            <div class="column"><img src="/imgs/introduction/ld_bys.png" class="ui image">
+                <p>图 5.1雷达维修方案推送系统的多项分布朴素贝叶斯算法 </p>
+            </div>
+        </div>
+    </div>
+    <div class="ui divider hidden"></div>
+    <div>
+        <h3>数据:</h3>
+        <div class="ui segment">
+输入数据：输入新的故障描述，输出一个契合度较高的维修方案。
+输入数据类似（雷达基本信息，故障描述，维修方法）三元组，输出数据为对应故障描述的维修方法。
+根据这一业务场景的具体逻辑，结合现有数据，首先整理得到了（雷达基本信息，故障描述，维修方法）三元组，由于雷达设备的历史积累，这样的三元组大概有数千条。因此，根据这些数据，在得到新的“故障描述”时，算法模型能够给出针对该故障描述的维修方法，基本的训练数据如图所示。
+        </div>
+    </div>
+    <div>
+        <h3>难点:</h3>
+        <div class="ui segment">
+                    这里的难点是：因为雷达警报的多重性和每人描述问题的语言表述不同，直接使用雷达维修手册中的各种已有“故障-维修方案”是无法完成该任务的。本模型最终采取的算法为文本相似度匹配和多项分布朴素贝叶斯算法。
+        </div>
+    </div>
+    <div>
+        <h3>结果:</h3>
+        <div class="ui segment">        实践中，使用模型对新故障描述进行测试，发现它能够针对全新的问题描述给出一定契合度的维修方案，测试结果如图所示。</div>
+    </div>
+</div>
+</body>
+</html>

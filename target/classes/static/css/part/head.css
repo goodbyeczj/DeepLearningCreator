@@ -1,0 +1,19 @@
+.head_shadow{
+    box-shadow: 1px 1px 1px #3c3c3c;
+    bottom: 10px;
+}
+.padding{
+    padding: 0 20px;
+}
+.vertical_block{
+    display: block;
+    margin: auto 0;
+}
+.font{
+    color: #4D555D;
+    font-weight: bolder;
+    font-size: 16px;
+}
+.font:hover{
+    color: #0099CC;
+}

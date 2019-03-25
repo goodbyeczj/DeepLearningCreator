@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在线特征数据提取与文本相似度计算</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/show.css">
+    <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/part/head.css">
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/semantic/dist/semantic.min.js"></script>
+</head>
+<body>
+<div class="ui left aligned grid head_shadow">
+    <div class="three wide column font"><a href="/rkb.html"><img src="/imgs/rkb.jpg"></a></div>
+    <div class="tow wide column vertical_block"><a href="/rkb.html" class="font">首页</a></div>
+    <div class="tow wide column vertical_block"><a class="font" href="/product.html">产品</a></div>
+    <div class="tow wide column vertical_block"><a class="font">联系</a></div>
+    <div class="eight wide column vertical_block"></div>
+    <div class="two wide column vertical_block"></div>
+</div>
+<div class="container sh_top">
+    <div>
+        <h3>背景:</h3>
+        <div class="ui segment">
+一个完整的问答系统，需要完成“文本-知识-推理-问答”这几个关键步骤，具体来说，获取雷达等气象监测设备的文本数据，形成“知识库”；从而在知识库基础上进行逻辑推理，完成问答系统的设计。这一过程涉及的知识点非常多，因此，可以采取针对半结构化的Word文档、Table表结构等内容建立文本相似度，从而快速完成问答推送。本项目的基本内容，是根据给定的关于雷达维修的技术文档建立问答模型，在用户的提问中给出合理的回答。
+        </div>
+        <div class="ui equal width grid">
+            <div class="column"><img src="/imgs/introduction/xsd_input.png" class="ui image">
+                <p>图 4.1雷达维修技术文本作为输入数据 </p>
+            </div>
+            <div class="column"><img src="/imgs/introduction/xsd_yx.png" class="ui image">
+                <p>图 4.1句子向量计算的相关代码和运行情况 </p>
+            </div>
+        </div>
+    </div>
+    <div class="ui divider hidden"></div>
+    <div>
+        <h3>数据:</h3>
+        <div class="ui segment">
+            输入数据：类似(雷达基本信息，故障描述，维修方法)三元组，输出数据为对应故障描述的维修方法，如图4.1雷达维修技术文本作为输入数据
+根据这一业务场景的具体逻辑，结合现有数据，首先整理得到了(雷达基本信息，故障描述，维修方法)三元组，由于雷达设备的历史积累，这样的三元组大概有数千条。因此，根据这些数据，在得到新的“故障描述”时，算法模型能够给出针对该故障描述的维修方法。
+        </div>
+    </div>
+    <div>
+        <h3>训练和测试算法:</h3>
+        <div class="ui segment">
+            根据给定的文本，使用Python-docx读入数据，使用jieba分词，进一步使用word2vec计算词向量，从而计算每个句子的向量。同样的方法计算用户提问的向量，然后根据余弦相似度计算提问和给定的哪部分文本最相似，从而完成该非结构化数据的问答系统。
+        </div>
+    </div>
+    <div>
+        <h3>结果:</h3>
+        <div class="ui segment">使用该算法可以得到大体堪用的结果，并且比使用知识图谱的方式简单、快速、稳定。因此，通常可以作为实际问答系统的重要组成部分。实践中，也可以为下一步的维修方案概率计算提供重要依据。</div>
+    </div>
+</div>
+</body>
+</html>

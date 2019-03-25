@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rkb.dao.PublicDataSetsDao">
+    <select id="findPublicDataSets" resultType="PublicDataSets">
+        select *
+        from t_public_dataset
+    </select>
+    <select id="findPublicDataSetsById" parameterType="Integer" resultType="PublicDataSets">
+        select *
+        from t_public_dataset
+        where id = #{id}
+    </select>
+</mapper>

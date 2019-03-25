@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>气象设备海量雨量筒图片处理和识别</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/show.css">
+    <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/part/head.css">
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/semantic/dist/semantic.min.js"></script>
+</head>
+<body>
+<div class="ui left aligned grid head_shadow">
+    <div class="three wide column vertical_block"><a href="/rkb.html" class="vertical_block"><img src="/imgs/rkb.jpg" class="vertical_block"></a></div>
+    <div class="tow wide column vertical_block"><a href="/rkb.html" class="font">首页</a></div>
+    <div class="tow wide column vertical_block"><a class="font" href="/product.html">产品</a></div>
+    <div class="tow wide column vertical_block"><a class="font">联系</a></div>
+    <div class="eight wide column vertical_block"></div>
+    <div class="two wide column vertical_block"></div>
+</div>
+<div class="container sh_top">
+    <div>
+        <h3>背景:</h3>
+        <div class="ui segment">
+雨量筒是气象设备中最基本最广泛的降水测量设备，全国有大约百万计的雨量站点。 针对雨量筒的维修和维护，我采取了“手机拍摄-时间地点验证-图片类别识别”的工作模式，其 中，对于图片的类别识别，在使用了支持向量机和随机森林做预演的前提下，最终选择了自定义 卷积深度神经网络进行识别，识别正确率为 99.2%，实现了技术突破，达到了实践的高可用性。        </div>
+        <div class="ui equal width grid">
+            <div class="column"><img src="/imgs/introduction/qx_jw.jpg" class="ui image">
+                <p>图 3.1 手机拍摄图像的经纬度等图像信息</p>
+            </div>
+            <div class="column"><img src="/imgs/introduction/qx_input.jpg" class="ui image">
+                <p>图 3.2 深度神经网络的输入图像</p>
+            </div>
+            <div class="column"><img src="/imgs/introduction/qx_cnn.jpg" class="ui image">
+                <p>图 3.3 雨量器图片识别使用的自定义卷积神经网络 CNN </p>
+            </div>
+        </div>
+    </div>
+    <div class="ui divider hidden"></div>
+    <div>
+        <h3>过程:</h3>
+        <div class="ui segment">
+关于图像等数据的识别，近年来更倾向于使用深度学习模型，在进行智能诊断中，如果对于给定 的图像数据做识别，可以使用 CNN、RNN 等模型进行高精确度的识别。
+识别系统的整体的工作过程是：
+（1）在雨量筒清洗干净后，要求清洗者使用手机拍摄清洗前后的对照照片，然后上传会“我 去修”数据平台识别系统，要求手机拍摄是因为它可以记录图像的拍摄经纬度和拍摄时间，从而 保证清洗者的确是到底了规定地点并且完成了本次清洗。
+（2）在自动确认经纬度和时间信息后，即将图片进入卷积神经网络，我设计了深度为 12 层 的中等规模 CNN，使用了 2 层 Dropout 和 2 层全连接；数据方面，将雨量筒分解后的部分包括承 接口、漏斗、长滤网、三角漏斗，此外，还有站点的全景图；再加上为了数据完整增加了“其 他”，因此，整个模型一共分成 6 个类别。
+给定的图片数据统一规范化到 256×256×3 的大小和通道，然后经过自定义的网络模型，输 出神经元为 6 个，最终完成图像的分类。
+        </div>
+    </div>
+    <div>
+        <h3>结果:</h3>
+        <div class="ui segment">将六大类图片每组随机选择 5000 张图片，组成规模为 3 万幅的训练数据。将原始训练数据喂 给自定义的 CNN 中，使用 AdamOptimizer 优化参数，经过约 2 万次 Epoch，最终得到收敛的网络 权值，从而可以使用它进行新图片的识别</div>
+    </div>
+</div>
+</body>
+</html>

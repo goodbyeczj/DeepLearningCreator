@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rkb.dao.ModelDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <insert id="addModel" parameterType="Model" useGeneratedKeys="true" keyProperty="id" >
+        INSERT INTO t_model (name,describe_,types,userId)
+              VALUES (#{name},#{describe_},#{types},#{userId})
+    </insert>
+    <delete id="deleteModel" parameterType="com.rkb.pojo.Model">
+        delete from t_model
+        where id = #{id}
+    </delete>
+    <update id="updateModel" parameterType="com.rkb.pojo.Model">
+        update t_model
+        set name = #{name },
+            describe_ =  #{describe_ },
+            dataInfo = #{dataInfo }
+        where id = #{id}
+    </update>
+    <update id="updateModelPath" parameterType="Model">
+        update t_model
+        set modelPath = #{modelPath }
+        where id = #{id}
+    </update>
+    <select id="findModelByName" parameterType="com.rkb.pojo.Model" resultType="com.rkb.pojo.Model">
+        select *
+        from t_model
+        where name like #{name }
+    </select>
+    <select id="findNameById" parameterType="Long" resultType="String">
+        select name
+        from t_model
+        where id = #{id }
+    </select>
+    <select id="findAllModelByUserId" parameterType="Model" resultType="Model">
+        select *
+        from t_model
+        where userId = #{userId}
+    </select>
+    <select id="findModelById" parameterType="Long" resultType="Model">
+        select *
+        from t_model
+        where id = #{id}
+    </select>
+    <select id="findLastId" resultType="Integer">
+        select id
+        from t_model
+        ORDER BY id DESC LIMIT 1;
+    </select>
+</mapper>
